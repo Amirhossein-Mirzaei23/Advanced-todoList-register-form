@@ -1,6 +1,7 @@
 let logInContainer=document.querySelector("main")
 let userInputElem=document.getElementById("usernameinput")
 let form=document.querySelector("form")
+let btn=document.querySelector("button")
 let passwordInputElem=document.getElementById("passwordinput")
 let animatedElemrRight=document.getElementById("animatedCircleright")
 let animatedElemrLeft=document.getElementById("animatedCircleleft")
@@ -38,11 +39,20 @@ function link(){
 
 form.addEventListener("submit",(e)=>{
     e.preventDefault()
+///////set loader to the button
+        btn.innerHTML=""
+        console.log("aa");
+        btn.insertAdjacentHTML("afterbegin",`<img class="w-1/6 mx-auto" src="https://samherbert.net/svg-loaders/svg-loaders/bars.svg" alt="loader">`)
+        //set err conction alert
+        setTimeout(() => {
+            alert("check your vpn conction")
+            btn.innerHTML="Submit"
+          }, 10000);
+    
     let newUser={
         username:userInputElem.value,
         passwoed:passwordInputElem.value
     }
-
     fetch('https://sabzlearn-exersize-default-rtdb.firebaseio.com/users.json',{
         method:'POST',
         headers:{
@@ -54,6 +64,7 @@ form.addEventListener("submit",(e)=>{
         console.log(newUser);
         clearData()
         link()
+        
     }) .catch(err => console.log(err))
 }
 )
