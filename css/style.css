@@ -5,7 +5,10 @@
     animation: around 4s 1000ms ease-in-out infinite;
 }
 .mt-78{
-    margin-top: 340px;
+    margin-top: 360px;
+}
+.mt-98{
+    margin-top: 460px;
 }
 
 @keyframes around {
