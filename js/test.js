@@ -23,7 +23,7 @@ let singUp=`<form action="" onsubmit="api(event)" id="Singupform" class="relativ
     </div>
     <div class="w-full mx-auto flex flex-col items-center text-left">
         <div class="w-9/12"><span class="float-left" for="password">repeat Password</span></div>
-        <input id="repeatinput" class="w-9/12 h-8 mx-auto rounded-md" type="password" placeholder="PassWord" name="PassWord" />
+        <input id="repeatinput" class="w-9/12 h-8 mx-auto rounded-md" type="password" placeholder="Repeat-Password" name="PassWord" />
         <div  class="w-9/12" id="checkpassword"></div>
         </div>
     <button id="submitbutton" class="w-7/12 py-2 mt-5 bg-cyan-300 rounded-lg transition-all border-red-950 hover:border hover:bg-zinc-200 hover:scale-95">Submit</button>
@@ -71,7 +71,7 @@ console.log(userInputElem.value,"/",passwordInputElem.value);
         let regexElem=document.getElementById("regex")
         let regextext="repeat Password isn`t match"
         function passwordmassege(){
-            checkpassElem.insertAdjacentHTML("beforeend",`<h1 class="flex text-red-500 mt-1 text-left">${regextext}</h1>`)
+            checkpassElem.insertAdjacentHTML("beforeend",`<h3 class="text-xs md:text-sm flex text-red-500 mt-1 text-left">${regextext}</h3>`)
         }
         if (/.{8}/.test(passwordInputElem.value) && /[^A-Za-z]/.test(passwordInputElem.value))
         {
@@ -79,7 +79,7 @@ console.log(userInputElem.value,"/",passwordInputElem.value);
             regexElem.innerHTML=""
         }else{
             regexElem.innerHTML=""
-            regexElem.insertAdjacentHTML("beforeend",`<h4 class="flex text-red-500 mt-1 text-left">At least 8 characters and contains one non-alphabetic character</h4>`)
+            regexElem.insertAdjacentHTML("beforeend",`<h4 class="text-xs md:text-sm flex text-red-500 mt-1 text-left">At least 8 characters and contains one non-alphabetic character</h4>`)
             return
         }
      if(checkPasswordInput.value===passwordInputElem.value){
@@ -91,7 +91,7 @@ console.log(userInputElem.value,"/",passwordInputElem.value);
             checkpassElem.innerHTML=""
             passwordmassege()
             return
-        }
+        }}
        
     ///////set loader to the button
             btn.innerHTML=""
@@ -121,7 +121,7 @@ console.log(userInputElem.value,"/",passwordInputElem.value);
             link()
             
         }) .catch(err => console.log(err))
-    }
+    
 }
 
 loginform.addEventListener("submit",api)
