@@ -6,7 +6,7 @@ let login=`<form action="" id="Loginform" class="relative font-serif w-9/12 sm:w
     <input id="usernameinput" class="w-9/12 h-8 mx-auto rounded-md" type="text" placeholder="username" name="username" /></div>
 <div class="w-full mx-auto flex flex-col items-center">
     <div class="w-9/12"><span class="float-left" for="password">Password</span></div>
-    <input id="passwordinput" class="w-9/12 h-8 mx-auto rounded-md" type="password" placeholder="PassWord" name="PassWord" />
+    <input id="passwordinput" class="w-9/12 h-8 mx-auto rounded-md" type="password" placeholder="Password" name="PassWord" />
     </div>
     <button id="submitbutton" class="w-7/12 py-2 mt-5 bg-cyan-300 rounded-lg transition-all border-red-950 hover:border hover:bg-zinc-200 hover:scale-95">Submit</button>
     <div class="text-xs"><button onclick="changeform(event)" id="singUPBtn" class="hover:text-cyan-300">Sing Up</button> / <button id="LoginBtn" onclick="changeform(event)" class="hover:text-cyan-300">Login</button></div>
@@ -18,11 +18,11 @@ let singUp=`<form action="" onsubmit="api(event)" id="Singupform" class="relativ
     <input id="usernameinput" class="w-9/12 h-8 mx-auto rounded-md" type="text" placeholder="username" name="username" /></div>
 <div class="w-full mx-auto flex flex-col items-center text-left">
     <div class="w-9/12"><span class="float-left" for="password">Password</span></div>
-    <input id="passwordinput" class="w-9/12 h-8 mx-auto rounded-md" type="password" placeholder="PassWord" name="PassWord" />
+    <input id="passwordinput" class="w-9/12 h-8 mx-auto rounded-md" type="password" placeholder="Password" name="PassWord" />
     <div  class="w-9/12" id="regex"></div>
     </div>
     <div class="w-full mx-auto flex flex-col items-center text-left">
-        <div class="w-9/12"><span class="float-left" for="password">repeat Password</span></div>
+        <div class="w-9/12"><span class="float-left" for="password">Repeat Password</span></div>
         <input id="repeatinput" class="w-9/12 h-8 mx-auto rounded-md" type="password" placeholder="Repeat-Password" name="PassWord" />
         <div  class="w-9/12" id="checkpassword"></div>
         </div>
