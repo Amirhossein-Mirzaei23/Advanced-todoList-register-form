@@ -19,11 +19,12 @@ let singUp=`<form action="" onsubmit="api(event)" id="Singupform" class="relativ
 <div class="w-full mx-auto flex flex-col items-center text-left">
     <div class="w-9/12"><span class="float-left" for="password">Password</span></div>
     <input id="passwordinput" class="w-9/12 h-8 mx-auto rounded-md" type="password" placeholder="PassWord" name="PassWord" />
+    <div  class="w-9/12" id="regex"></div>
     </div>
     <div class="w-full mx-auto flex flex-col items-center text-left">
         <div class="w-9/12"><span class="float-left" for="password">repeat Password</span></div>
         <input id="repeatinput" class="w-9/12 h-8 mx-auto rounded-md" type="password" placeholder="PassWord" name="PassWord" />
-        <div  class="w-9/12" id="regex"></div>
+        <div  class="w-9/12" id="checkpassword"></div>
         </div>
     <button id="submitbutton" class="w-7/12 py-2 mt-5 bg-cyan-300 rounded-lg transition-all border-red-950 hover:border hover:bg-zinc-200 hover:scale-95">Submit</button>
     <div class="text-xs"><button onclick="changeform(event)" id="singUPBtn" class="hover:text-cyan-300">Sing Up</button> / <button id="LoginBtn" onclick="changeform(event)" class="hover:text-cyan-300">Login</button></div>
@@ -66,18 +67,28 @@ console.log(userInputElem.value,"/",passwordInputElem.value);
 
     if(e.target.id=="Singupform"){
         let checkPasswordInput=document.getElementById("repeatinput")
+        let checkpassElem=document.getElementById("checkpassword")
         let regexElem=document.getElementById("regex")
         let regextext="repeat Password isn`t match"
         function passwordmassege(){
-            regexElem.insertAdjacentHTML("beforeend",`<h1 class="flex text-red-500 mt-1 text-left">${regextext}</h1>`)
+            checkpassElem.insertAdjacentHTML("beforeend",`<h1 class="flex text-red-500 mt-1 text-left">${regextext}</h1>`)
+        }
+        if (/.{8}/.test(passwordInputElem.value) && /[^A-Za-z]/.test(passwordInputElem.value))
+        {
+            // At least 8 characters and contains one non-alphabetic character
+            regexElem.innerHTML=""
+        }else{
+            regexElem.innerHTML=""
+            regexElem.insertAdjacentHTML("beforeend",`<h4 class="flex text-red-500 mt-1 text-left">At least 8 characters and contains one non-alphabetic character</h4>`)
+            return
         }
      if(checkPasswordInput.value===passwordInputElem.value){
            
             regextext="repeat Password is matched"
-            regexElem.innerHTML=""
+            checkpassElem.innerHTML=""
             passwordmassege()
         }else{
-            regexElem.innerHTML=""
+            checkpassElem.innerHTML=""
             passwordmassege()
             return
         }
