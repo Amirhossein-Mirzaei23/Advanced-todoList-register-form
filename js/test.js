@@ -29,7 +29,7 @@ let singUp=`<form action="" onsubmit="api(event)" id="Singupform" class="relativ
     <button id="submitbutton" class="w-7/12 py-2 mt-5 bg-cyan-300 rounded-lg transition-all border-red-950 hover:border hover:bg-zinc-200 hover:scale-95">Submit</button>
     <div class="text-xs"><button onclick="changeform(event)" id="singUPBtn" class="hover:text-cyan-300">Sing Up</button> / <button id="LoginBtn" onclick="changeform(event)" class="hover:text-cyan-300">Login</button></div>
 </form>`
-//
+// add login form to the contioner
 logInContainer.insertAdjacentHTML("beforeend",login)
 
 let loginform=document.getElementById("Loginform")
@@ -41,20 +41,25 @@ let loginBtn=document.getElementById("LoginBtn")
 let animatedElemrRight=document.getElementById("animatedCircleright")
 let animatedElemrLeft=document.getElementById("animatedCircleleft")
 
+/// a function to clear input value after submit
+
 function clearData () {
     let passwordInputElem=document.getElementById("passwordinput")
     let userInputElem=document.getElementById("usernameinput")
     userInputElem.value=""
     passwordInputElem.value=""
 }
+/// a function to redirect the user to the todolist
 function link(){
     console.log(location.search);
     window.location.assign("https://amirhossein-mirzaei23.github.io/Advanced-Todo-List/")
 }
+///
 function define(){
     let passwordInputElem=document.getElementById("passwordinput")
 let userInputElem=document.getElementById("usernameinput")
 }
+/// a function to create regex for sing up form
 function api(e){
     
         e.preventDefault()
