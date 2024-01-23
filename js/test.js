@@ -67,7 +67,7 @@ function api(e){
 let passwordInputElem=document.getElementById("passwordinput")
 let userInputElem=document.getElementById("usernameinput")
 
-console.log(userInputElem.value,"/",passwordInputElem.value);
+
 
 
     if(e.target.id=="Singupform"){
@@ -112,7 +112,7 @@ console.log(userInputElem.value,"/",passwordInputElem.value);
             username:userInputElem.value,
             password:passwordInputElem.value
         }
-
+/// a fecth method to post user info
         fetch('https://sabzlearn-exersize-default-rtdb.firebaseio.com/users.json',{
             method:'POST',
             headers:{
